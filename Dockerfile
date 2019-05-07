@@ -27,6 +27,8 @@ LABEL Description="This is a base image, which allows connecting Jenkins agents 
 COPY jenkins-slave /usr/local/bin/jenkins-slave
 
 CMD apt -qq update \
-    && apt install -y repo build-essential default-jdk python-dev python-pip python3-dev python3-pip libc6-armel-cross libc6-dev-armel-cross binutils-arm-linux-gnueabi gcc-arm-linux-gnueabihf libncurses5-dev flex bison curl  apt-transport-https  ca-certificates  software-properties-common icedtea-netx icedtea-plugin slick-greeter debconf debconf-utils debootstrap  qemu-user-static htop 
+    && apt install -y build-essential default-jdk python-dev python-pip python3-dev python3-pip libc6-armel-cross libc6-dev-armel-cross binutils-arm-linux-gnueabi gcc-arm-linux-gnueabihf libncurses5-dev flex bison curl  apt-transport-https  ca-certificates  software-properties-common icedtea-netx icedtea-plugin slick-greeter debconf debconf-utils debootstrap  qemu-user-static htop 
+CMD curl https://storage.googleapis.com/git-repo-downloads/repo > /usr/local/bin/repo \
+    && chmod a+x /usr/local/bin/repo
 
 ENTRYPOINT ["jenkins-slave"]
