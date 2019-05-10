@@ -28,10 +28,13 @@ COPY jenkins-slave /usr/local/bin/jenkins-slave
 
 USER root
 
-RUN apt update
-RUN apt install -y build-essential sudo flex python-dev bison bc make pandoc texlive qemu debootstrap pandoc python-pip python3-dev python3-pip libc6-armel-cross libc6-dev-armel-cross binutils-arm-linux-gnueabi gcc-arm-linux-gnueabihf
 RUN curl https://storage.googleapis.com/git-repo-downloads/repo > /usr/local/bin/repo
 RUN chmod a+x /usr/local/bin/repo
+RUN apt update
+RUN apt install -y build-essential sudo flex python-dev bison bc 
+RUN apt install -y make pandoc texlive qemu debootstrap pandoc 
+RUN apt install -y python-pip python3-dev python3-pip libc6-armel-cross 
+RUN apt install -y libc6-dev-armel-cross binutils-arm-linux-gnueabi gcc-arm-linux-gnueabihf
 
 USER ${user}
 
