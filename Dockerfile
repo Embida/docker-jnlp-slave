@@ -29,7 +29,7 @@ COPY jenkins-slave /usr/local/bin/jenkins-slave
 USER root
 
 RUN apt update
-RUN apt install -y build-essential python-dev python-pip python3-dev python3-pip libc6-armel-cross libc6-dev-armel-cross binutils-arm-linux-gnueabi gcc-arm-linux-gnueabihf
+RUN apt install -y build-essential sudo python-dev python-pip python3-dev python3-pip libc6-armel-cross libc6-dev-armel-cross binutils-arm-linux-gnueabi gcc-arm-linux-gnueabihf
 RUN curl https://storage.googleapis.com/git-repo-downloads/repo > /usr/local/bin/repo
 RUN chmod a+x /usr/local/bin/repo
 
